@@ -2,11 +2,27 @@
   displayBlock="true"
   xmlns="sap.m"
   xmlns:mvc="sap.ui.core.mvc">
-  <App id="idAppControl" >
-    <pages>
-      <Page title="{i18n>title}">
-        <content></content>
-      </Page>
-    </pages>
+  
+  <App id="idAppControl">
+    <Page showHeader="false" title="{i18n>title}" backgroundDesign="Transparent">
+
+        <Panel class="sapUiResponsiveMargin" accessibleRole="Region">
+            <content>
+              <Image src="./resources/img/top.png" width="100%" height="auto" />				
+            </content>		
+        </Panel>        
+        
+        
+        <footer>
+          <OverflowToolbar>
+            <content>
+              <ToolbarSpacer />
+              <Button text="Desenvolvido: Claudio Teixeira" />
+            </content>
+          </OverflowToolbar>
+        </footer>
+
+    </Page>
   </App>
+
 </mvc:View>
