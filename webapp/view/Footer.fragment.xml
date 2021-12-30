@@ -1,0 +1,12 @@
+<c:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:c="sap.ui.core"
+>
+
+<Toolbar >
+  <content>
+      <Label text="Desenvolvido: Claudio Teixeira" tooltip="Claudio Teixeira"/>
+  </content>
+</Toolbar>
+
+</c:FragmentDefinition>

@@ -1,91 +1,108 @@
 {
-  "_version": "1.12.0",
-  "sap.app": {
-    "id": "com.te.buscacnpjui5",
-    "type": "application",
-    "i18n": "i18n/i18n.properties",
-    "applicationVersion": {
-      "version": "1.0.0"
+    "_version": "1.8.0",
+    "sap.app": {
+        "id": "buscacnpj.ui5",
+        "type": "application",
+        "i18n": "i18n/i18n.properties",
+        "applicationVersion": {
+            "version": "1.0.0"
+        },
+        "title": "{{apptitle}}",
+        "description": "{{appDescription}}",
+        "dataSources": {
+            "formacoes_alias": {
+                "uri": "model/formacoes.json",
+                "type": "JSON"
+            }
+        }
     },
-    "title": "{{appTitle}}",
-    "description": "{{appDescription}}"
-  },
-  "sap.ui": {
-    "technology": "UI5",
-    "icons": {
-      "icon": "",
-      "favIcon": "",
-      "phone": "",
-      "phone@2": "",
-      "tablet": "",
-      "tablet@2": ""
+    "sap.ui": {
+        "technology": "BuscaCNPJ UI5",
+        "icons": {
+            "icon": "",
+            "favIcon": "",
+            "phone": "",
+            "phone@2": "",
+            "tablet": ",",
+            "tablet@2": ""
+        },
+        "deviceTypes": {
+            "desktop": true,
+            "tablet": true,
+            "phone": true
+        },
+        "supportedThemes": [
+            "sap_fiori_3",
+            "sap_belize"
+        ]
     },
-    "deviceTypes": {
-      "desktop": true,
-      "tablet": true,
-      "phone": true
+    "sap.ui5": {
+        "rootView": {
+            "viewName": "buscacnpj.ui5.view.App",
+            "type": "XML"
+        },
+        "dependencies": {
+            "minUI5Version": "1.60.0",
+            "libs": {
+                "sap.ui.layout": {},
+                "sap.ui.core": {},
+                "sap.m": {}
+            }
+        },        
+        "contentDensities": {
+            "compact": true,
+            "cozy": true
+        },
+        "models": {
+            "i18n": {
+                "type": "sap.ui.model.resource.ResourceModel",
+                "settings": {
+                    "bundleName": "buscacnpj.ui5.i18n.i18n"
+                }
+            },
+            "tiles": {
+                "type": "sap.ui.model.json.JSONModel",
+                "dataSource": "tiles"
+            }
+        },
+        "resources": {
+            "css": [
+                {
+                    "uri": "css/styles.css"
+                }
+            ]
+        },
+        "routing": {
+            "config": {
+                "routerClass": "sap.m.routing.Router",
+                "viewType": "XML",
+                "async": true,
+                "viewPath": "buscacnpj.ui5.view",
+                "controlAggregation": "pages",
+                "controlId": "app",
+                "clearControlAggregation": false
+            },
+            "routes": [
+                {
+                    "name": "RouteApp",
+                    "pattern": "",
+                    "target": [
+                        "TargetApp"
+                    ]
+                }
+            ],
+            "targets": {
+                "TargetApp": {
+                    "viewType": "XML",
+                    "transition": "slide",
+                    "clearControlAggregation": false,
+                    "viewName": "App"
+                }
+            }
+        }
+    },
+    "sap.platform.hcp": {
+        "uri": "webapp",
+        "_version": "1.1.0"
     }
-  },
-  "sap.ui5": {
-    "rootView": {
-      "viewName": "com.te.buscacnpjui5.view.Main",
-      "type": "XML",
-      "async": true,
-      "id": "idAppControl"
-    },
-    "dependencies": {
-      "minUI5Version": "1.60.0",
-      "libs": {
-        "sap.ui.core": {},
-        "sap.m": {},
-        "sap.ui.layout": {}
-      }
-    },
-    "contentDensities": {
-      "compact": true,
-      "cozy": true
-    },
-    "models": {
-      "i18n": {
-        "type": "sap.ui.model.resource.ResourceModel",
-        "settings": {
-          "bundleName": "com.te.buscacnpjui5.i18n.i18n"
-        }
-      }
-    },
-    "resources": {
-      "css": [
-        {
-          "uri": "css/style.css"
-        }
-      ]
-    },
-    "routing": {
-      "config": {
-        "routerClass": "sap.m.routing.Router",
-        "viewType": "XML",
-        "viewPath": "com.te.buscacnpjui5.view",
-        "controlId": "idAppControl",
-        "controlAggregation": "pages",
-        "async": true
-      },
-      "routes": [
-        {
-          "name": "RouteMain",
-          "pattern": "RouteMain",
-          "target": [
-            "TargetMain"
-          ]
-        }
-      ],
-      "targets": {
-        "TargetMain": {
-          "viewType": "XML",
-          "viewLevel": 1,
-          "viewId": "idAppControl",
-          "viewName": "Main"
-        }
-      }
-    }
-  }
 }
