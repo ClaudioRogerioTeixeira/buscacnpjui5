@@ -1,0 +1,12 @@
+{
+  "generator-easy-ui5": {
+    "projectname": "buscacnpjui5",
+    "namespace": "com.te",
+    "platform": "Static webserver",
+    "viewtype": "XML",
+    "viewname": "Main",
+    "ui5libs": "Local resources (OpenUI5)",
+    "newdir": false,
+    "namespaceURI": "com/te"
+  }
+}
