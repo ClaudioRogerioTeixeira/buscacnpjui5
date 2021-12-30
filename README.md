@@ -1,2 +1,2 @@
-# buscacnpjui5
-Busca CNPJ
+# BuscaCNPJ UI5
+APP de Busca CNPJ em todo o Brasil.
