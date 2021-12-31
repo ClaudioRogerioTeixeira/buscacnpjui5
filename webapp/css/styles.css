@@ -1,0 +1,11 @@
+.container {  
+  margin-top: 80px;
+}
+
+.text {
+  font-size: 30px;
+}
+
+.input {
+  width: 500px !important;
+}

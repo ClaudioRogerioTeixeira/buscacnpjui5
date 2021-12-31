@@ -3,6 +3,8 @@
 	xmlns:mvc="sap.ui.core.mvc"
   xmlns:core="sap.ui.core"
 	xmlns="sap.m"
+	xmlns:f="sap.ui.layout.form"
+  xmlns:html="http://www.w3.org/1999/xhtml"
   displayBlock="true"
 	height="100%"
 	busyIndicatorDelay="0"
@@ -17,7 +19,24 @@
             </content>		
         </Panel>        
 
-        
+        <html:div class="container">
+          <FlexBox      
+            direction="Column"       
+            alignItems="Center"
+          >
+            <Image src="./assets/empresas.svg" width="80%" height="auto"/>
+            <Text class="text" text="Consulte o CNPJ de Empresas"/>
+          </FlexBox>
+
+          <FlexBox      
+          direction="row"       
+				  justifyContent="Center"
+        >
+          <Input class="input" value="" placeholder="Digite o CNPJ da empresa"/>
+          <Button icon="sap-icon://search" press=".consultaCnpj"/>
+        </FlexBox>         
+          
+        </html:div>
         
         <footer>
            <core:Fragment fragmentName="buscacnpj.ui5.view.Footer" type="XML" />          
