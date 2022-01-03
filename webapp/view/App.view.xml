@@ -46,69 +46,69 @@
           
           <IconTabFilter text="Dados Principais" key="dados">           
             <List headerText="Dados Principais do CNPJ" >
-              <InputListItem label="Abertura:">
+              <InputListItem label="Abertura:" type="Navigation">
                 <Text text="{data>/abertura}"/>
               </InputListItem>
-              <InputListItem label="CNPJ:">
+              <InputListItem label="CNPJ:" type="Navigation">
                 <Text text="{data>/abertura}"/>
               </InputListItem>
-              <InputListItem label="Nome:">
+              <InputListItem label="Nome:" type="Navigation">
                 <Text text="{data>/nome}"/>
               </InputListItem>
-              <InputListItem label="Natureza Jurídica:">
+              <InputListItem label="Natureza Jurídica:" type="Navigation">
                 <Text text="{data>/natureza_juridica}"/>
               </InputListItem>              
-              <InputListItem label="Fantasia:">
+              <InputListItem label="Fantasia:" type="Navigation">
                 <Text text="{data>/fantasia}"/>
               </InputListItem>              
-              <InputListItem label="Capital Social:">
+              <InputListItem label="Capital Social:" type="Navigation">
                 <Text text="{data>/capital_social}"/>
               </InputListItem>
-              <InputListItem label="Data Situação:">
+              <InputListItem label="Data Situação:" type="Navigation">
                 <Text text="{data>/data_situacao}"/>
               </InputListItem>
-              <InputListItem label="EFR:">
+              <InputListItem label="EFR:" type="Navigation">
                 <Text text="{data>/efr}"/>
               </InputListItem>
-              <InputListItem label="Data Situação:">
+              <InputListItem label="Data Situação:" type="Navigation">
                 <Text text="{data>/data_situacao}"/>
               </InputListItem>                          
-              <InputListItem label="Porte:">
+              <InputListItem label="Porte:" type="Navigation">
                 <Text text="{data>/porte}"/>
               </InputListItem>
-              <InputListItem label="Situação:">
+              <InputListItem label="Situação:" type="Navigation">
                 <Text text="{data>/situacao_especial}"/>
               </InputListItem>
-              <InputListItem label="Tipo:">
+              <InputListItem label="Tipo:" type="Navigation">
                 <Text text="{data>/tipo}"/>
               </InputListItem>
-              <InputListItem label="Última Atualização:">
+              <InputListItem label="Última Atualização:" type="Navigation">
                 <Text text="{data>/ultima_atualizacao}"/>
               </InputListItem>                            
             </List>
           </IconTabFilter>
          
           <IconTabFilter text="Endereço" key="endereco">
-            <List headerText="Endereço do CNPJ">
-              <InputListItem label="Logradouro:">
+            <List headerText="Endereço do CNPJ" >
+              <InputListItem label="Logradouro:" type="Navigation">
                 <Text text="{data>/logradouro}" />
               </InputListItem>
-              <InputListItem label="número:">
+              <InputListItem label="número:" type="Navigation">
                 <Text text="{data>/numero}" />
               </InputListItem>
-              <InputListItem label="Bairro">
+              <InputListItem label="Bairro" type="Navigation">
                 <Text text="{data>/bairro}" />
               </InputListItem>              
-              <InputListItem label="Complemento">
+              <InputListItem label="Complemento:" type="Navigation">
                 <Text text="{data>/complemento}" />
               </InputListItem>
-              <InputListItem label="Município">
+              <InputListItem label="Município:" type="Navigation">
                 <Text text="{data>/municipio}" />
               </InputListItem>              
-              <InputListItem label="Cep">
+              <InputListItem label="Cep:" type="Navigation">
                 <Text text="{data>/cep}" />
               </InputListItem>
-              <InputListItem label="UF">
+              <InputListItem label="UF:" type="Navigation">
                 <Text text="{data>/uf}" />
               </InputListItem>              
             </List>
@@ -116,7 +116,7 @@
 
           <IconTabFilter text="Telefone" key="telefone">
             <List headerText="Telefone do CNPJ">
-              <InputListItem label="Telefone:">
+              <InputListItem label="Telefone:" type="Navigation">
                 <Text text="{data>/telefone}" />
               </InputListItem>
             </List>
@@ -124,7 +124,7 @@
 
           <IconTabFilter text="Email" key="email">
             <List headerText="Email do CNPJ">
-              <InputListItem label="Email:">
+              <InputListItem label="Email:" type="Navigation">
                 <Text text="{data>/email}" />
               </InputListItem>
             </List>
@@ -132,10 +132,10 @@
                     
           <IconTabFilter text="Atividade Principal" key="principal">
             <List headerText="Atividade Principal do CNPJ">
-              <InputListItem label="Código CNAE">
+              <InputListItem label="Código CNAE:" type="Navigation">
                 <Text text="{data>/atividade_principal[0].code}" />
               </InputListItem>
-              <InputListItem label="Descrição CNAE">
+              <InputListItem label="Descrição CNAE:" type="Navigation">
                 <Text text="{data>/atividade_principal[0].text}" />
               </InputListItem>
 
@@ -144,10 +144,10 @@
           
           <IconTabFilter text="Atividade Secundária" key="secundario">
             <List headerText="Atividade Secundária do CNPJ">
-              <InputListItem label="Código CNAE">
+              <InputListItem label="Código CNAE:" type="Navigation">
                 <Text text="{data>/atividades_secundarias[0].code}" />
               </InputListItem>
-              <InputListItem label="Descrição CNAE">
+              <InputListItem label="Descrição CNAE:" type="Navigation">
                 <Text text="{data>/atividades_secundarias[0].text}" />
               </InputListItem>
             </List>
@@ -155,19 +155,18 @@
 
           <IconTabFilter text="Sócios" key="socios">
             <List headerText="Sócios do CNPJ">
-              <InputListItem label="Nome">
-                <Text text="{data>/qsa[0]}" />
-              </InputListItem>
-              <InputListItem label="Qual.">
+              <InputListItem label="Qual.:" type="Navigation">
                 <Text text="{data>/qsa[0].qual}" />
               </InputListItem>
-              <InputListItem label="Nome">
-                <Text text="{data>/qsa[1].nome}" />
+              <InputListItem label="Nome:" type="Navigation">
+                <Text text="{data>/qsa[0].nome}" />
               </InputListItem>
-              <InputListItem label="Qual.">
+              <InputListItem label="Qual.:" type="Navigation">
                 <Text text="{data>/qsa[1].qual}" />
               </InputListItem>
-
+              <InputListItem label="Nome:" type="Navigation">
+                <Text text="{data>/qsa[1].nome}" />
+              </InputListItem>
             </List>
           </IconTabFilter>
 
