@@ -18,7 +18,7 @@
               <Image src="./assets/top.png" width="100%" height="auto" />				
             </content>		
         </Panel>        
-
+        
         <html:div class="container">
           <FlexBox      
             direction="Column"       
@@ -29,14 +29,147 @@
           </FlexBox>
 
           <FlexBox      
-          direction="row"       
-				  justifyContent="Center"
-        >
-          <Input class="input" value="" placeholder="Digite o CNPJ da empresa"/>
-          <Button icon="sap-icon://search" press=".consultaCnpj"/>
-        </FlexBox>         
+            direction="Row"       
+				    justifyContent="Center"
+          >
+            <Input class="input" id="inputCnpj" placeholder="Digite o CNPJ da empresa" showValueHelp="true" valueHelpRequest=".onValueHelpRequest" />
+            <Button id="botao" icon="sap-icon://search" press=".consultaCnpj"/>
+          </FlexBox>         
           
-        </html:div>
+        </html:div>   
+
+        <IconTabBar
+        id="idIconTabBarNoIcons"
+        expanded="{device>/isNoPhone}"
+        class="sapUiResponsiveContentPadding sapUiLargeMarginTop sapUiLargeMarginBottom">
+        <items>
+          
+          <IconTabFilter text="Dados Principais" key="dados">           
+            <List headerText="Dados Principais do CNPJ" >
+              <InputListItem label="Abertura:">
+                <Text text="{data>/abertura}"/>
+              </InputListItem>
+              <InputListItem label="CNPJ:">
+                <Text text="{data>/abertura}"/>
+              </InputListItem>
+              <InputListItem label="Nome:">
+                <Text text="{data>/nome}"/>
+              </InputListItem>
+              <InputListItem label="Natureza Jurídica:">
+                <Text text="{data>/natureza_juridica}"/>
+              </InputListItem>              
+              <InputListItem label="Fantasia:">
+                <Text text="{data>/fantasia}"/>
+              </InputListItem>              
+              <InputListItem label="Capital Social:">
+                <Text text="{data>/capital_social}"/>
+              </InputListItem>
+              <InputListItem label="Data Situação:">
+                <Text text="{data>/data_situacao}"/>
+              </InputListItem>
+              <InputListItem label="EFR:">
+                <Text text="{data>/efr}"/>
+              </InputListItem>
+              <InputListItem label="Data Situação:">
+                <Text text="{data>/data_situacao}"/>
+              </InputListItem>                          
+              <InputListItem label="Porte:">
+                <Text text="{data>/porte}"/>
+              </InputListItem>
+              <InputListItem label="Situação:">
+                <Text text="{data>/situacao_especial}"/>
+              </InputListItem>
+              <InputListItem label="Tipo:">
+                <Text text="{data>/tipo}"/>
+              </InputListItem>
+              <InputListItem label="Última Atualização:">
+                <Text text="{data>/ultima_atualizacao}"/>
+              </InputListItem>                            
+            </List>
+          </IconTabFilter>
+         
+          <IconTabFilter text="Endereço" key="endereco">
+            <List headerText="Endereço do CNPJ">
+              <InputListItem label="Logradouro:">
+                <Text text="{data>/logradouro}" />
+              </InputListItem>
+              <InputListItem label="número:">
+                <Text text="{data>/numero}" />
+              </InputListItem>
+              <InputListItem label="Bairro">
+                <Text text="{data>/bairro}" />
+              </InputListItem>              
+              <InputListItem label="Complemento">
+                <Text text="{data>/complemento}" />
+              </InputListItem>
+              <InputListItem label="Município">
+                <Text text="{data>/municipio}" />
+              </InputListItem>              
+              <InputListItem label="Cep">
+                <Text text="{data>/cep}" />
+              </InputListItem>              
+            </List>
+          </IconTabFilter>
+
+          <IconTabFilter text="Telefone" key="telefone">
+            <List headerText="Telefone do CNPJ">
+              <InputListItem label="Telefone:">
+                <Text text="{data>/telefone}" />
+              </InputListItem>
+            </List>
+          </IconTabFilter>
+
+          <IconTabFilter text="Email" key="email">
+            <List headerText="Email do CNPJ">
+              <InputListItem label="Email:">
+                <Text text="{data>/email}" />
+              </InputListItem>
+            </List>
+          </IconTabFilter>          
+                    
+          <IconTabFilter text="Atividade Principal" key="principal">
+            <List headerText="Atividade Principal do CNPJ">
+              <InputListItem label="Código CNAE">
+                <Text text="{data>/atividade_principal[0].code}" />
+              </InputListItem>
+              <InputListItem label="Descrição CNAE">
+                <Text text="{data>/atividade_principal[0].text}" />
+              </InputListItem>
+
+            </List>
+          </IconTabFilter>
+          
+          <IconTabFilter text="Atividade Secundária" key="secundario">
+            <List headerText="Atividade Secundária do CNPJ">
+              <InputListItem label="Código CNAE">
+                <Text text="{data>/atividades_secundarias[0].code}" />
+              </InputListItem>
+              <InputListItem label="Descrição CNAE">
+                <Text text="{data>/atividades_secundarias[0].text}" />
+              </InputListItem>
+            </List>
+          </IconTabFilter>
+
+          <IconTabFilter text="Sócios" key="socios">
+            <List headerText="Sócios do CNPJ">
+              <InputListItem label="Nome">
+                <Text text="{data>/qsa[0]}" />
+              </InputListItem>
+              <InputListItem label="Qual.">
+                <Text text="{data>/qsa[0].qual}" />
+              </InputListItem>
+              <InputListItem label="Nome">
+                <Text text="{data>/qsa[1].nome}" />
+              </InputListItem>
+              <InputListItem label="Qual.">
+                <Text text="{data>/qsa[1].qual}" />
+              </InputListItem>
+
+            </List>
+          </IconTabFilter>
+
+        </items>
+      </IconTabBar>        
         
         <footer>
            <core:Fragment fragmentName="buscacnpj.ui5.view.Footer" type="XML" />          

@@ -2,24 +2,45 @@ sap.ui.define([
 	"sap/ui/core/mvc/Controller",
 	"sap/ui/model/json/JSONModel",
 	"sap/m/MessageToast"
-], function(Controller, JSONModel, MessageToast) {
+], function(Controller,
+	JSONModel,
+	MessageToast) {
 	"use strict";
 
 	return Controller.extend("buscacnpj.ui5.controller.App", {
 
 			onInit: function() {
-
-			let tilesModel = new JSONModel("./model/tiles.json");
-			this.getView().setModel(tilesModel, "tiles");
-		},
-
-		onPress: function(oEvent) {
-			var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
-			oRouter.navTo(`${oEvent}`)
+			this.getView().byId("idIconTabBarNoIcons").setVisible(false);
 		},
 
 		consultaCnpj: function(oEvent) {
-			MessageToast.show('Consulta CNPJ');
+			this.getView().byId("idIconTabBarNoIcons").setVisible(true);
+			var cnpj = this.getView().byId("inputCnpj").getValue().toString();			
+			var url = 'https://www.receitaws.com.br/v1/cnpj/' + cnpj.replace(/[^0-9]/g, '');
+			var that = this;
+			jQuery.ajax({
+				method: "GET",
+				url: url,
+				"dataType": "jsonp",
+				success: function (response) {
+					console.log(response);
+					console.log(response.nome);
+					console.log(response.atividade_principal[0].code);
+					var oModel = new JSONModel(response);
+					that.getView().setModel(oModel, "data");									
+					MessageToast.show("Consulta efetuada com sucesso.");
+					$(".sapMMessageToast").addClass("sapMMessageToastSuccess");
+				},
+				error: function(error) {
+					MessageToast.show("Consulta não efetuada com sucesso.");
+					$(".sapMMessageToast").addClass("sapMMessageToastDanger");							
+				}
+			})
+		},
+
+		onValueHelpRequest: function(oEvent) {
+			this.getView().byId("idIconTabBarNoIcons").setVisible(false);
+			this.getView().byId("inputCnpj").setValue("");		
 		}
 
 	});
