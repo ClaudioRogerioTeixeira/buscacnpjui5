@@ -49,6 +49,9 @@
               <InputListItem label="Abertura:" type="Navigation">
                 <Text text="{data>/abertura}"/>
               </InputListItem>
+              <InputListItem label="Status:" type="Navigation">
+                <Text text="{data>/status}"/>
+              </InputListItem>
               <InputListItem label="CNPJ:" type="Navigation">
                 <Text text="{data>/abertura}"/>
               </InputListItem>
