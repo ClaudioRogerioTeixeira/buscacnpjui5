@@ -32,8 +32,8 @@
             direction="Row"       
 				    justifyContent="Center"
           >
-            <Input class="input" id="inputCnpj" placeholder="Digite o CNPJ da empresa" showValueHelp="true" valueHelpRequest=".onValueHelpRequest" />
-            <Button id="botao" icon="sap-icon://search" press=".consultaCnpj"/>
+            <Input class="input" id="inputCnpj" placeholder="Digite o CNPJ da empresa" showValueHelp="true" valueHelpRequest=".onValueHelpRequest"  tooltip="Digite o CNPJ da empresa" />
+            <Button id="botao" icon="sap-icon://search" press=".consultaCnpj" tooltip="Consultar o CNPJ"/>
           </FlexBox>         
           
         </html:div>   

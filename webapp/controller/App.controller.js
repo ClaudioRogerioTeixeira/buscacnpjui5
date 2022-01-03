@@ -33,7 +33,8 @@ sap.ui.define([
 				},
 				error: function(error) {
 					MessageToast.show("Consulta não efetuada com sucesso.");
-					$(".sapMMessageToast").addClass("sapMMessageToastDanger");							
+					$(".sapMMessageToast").addClass("sapMMessageToastDanger");
+					that.onValueHelpRequest(oEvent);
 				}
 			})
 		},
