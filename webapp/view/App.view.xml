@@ -53,7 +53,7 @@
                 <Text text="{data>/status}"/>
               </InputListItem>
               <InputListItem label="CNPJ:" type="Navigation">
-                <Text text="{data>/abertura}"/>
+                <Text text="{data>/cnpj}"/>
               </InputListItem>
               <InputListItem label="Nome:" type="Navigation">
                 <Text text="{data>/nome}"/>
