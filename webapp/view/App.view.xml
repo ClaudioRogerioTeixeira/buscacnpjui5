@@ -107,6 +107,9 @@
               </InputListItem>              
               <InputListItem label="Cep">
                 <Text text="{data>/cep}" />
+              </InputListItem>
+              <InputListItem label="UF">
+                <Text text="{data>/uf}" />
               </InputListItem>              
             </List>
           </IconTabFilter>
