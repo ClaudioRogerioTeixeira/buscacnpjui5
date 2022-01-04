@@ -3,9 +3,10 @@
 	xmlns:c="sap.ui.core"
 >
 
-<Toolbar >
+<Toolbar class="toolbarColor">
   <content>
-      <Label text="Desenvolvido: Claudio Teixeira" tooltip="Claudio Teixeira"/>
+      <ToolbarSpacer/>
+      <Label text="Desenvolvido: Claudio Teixeira" tooltip="Claudio Teixeira" class="labelFooter"/>
   </content>
 </Toolbar>
 

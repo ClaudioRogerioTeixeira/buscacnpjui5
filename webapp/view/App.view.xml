@@ -12,12 +12,21 @@
 <App id="app">
     <Page showHeader="false" title="{i18n>title}" backgroundDesign="Transparent">
 
+        <!-- 
         <Panel class="sapUiResponsiveMargin" accessibleRole="Region">
             <content>
-              <Image src="./assets/top.png" width="100%" height="auto" />				
+              <Image src="./assets/top.png" width="100%" height="auto" />              
             </content>		
-        </Panel>        
-        
+        </Panel>
+        -->
+
+        <!-- <Image class="imageTop" /> -->
+        <html:picture>
+          <html:source media="(max-width: 480px)" srcset="./assets/top600.png" />
+          <html:source media="(max-width: 768px)" srcset="./assets/top600.png" />
+          <html:img src="./assets/top.png" width="100%" height="auto" />              
+        </html:picture>
+                
         <html:div class="container">
           <FlexBox      
             direction="Column"       
@@ -41,141 +50,147 @@
         id="idIconTabBarNoIcons"
         class="sapUiResponsiveContentPadding sapUiLargeMarginTop sapUiLargeMarginBottom"     
         >
-        <items>
+          <items>
+            
+            <IconTabFilter text="Dados Principais" key="dados" iconColor="Critical">
+              <List headerText="Dados Principais da empresa {data>/fantasia}">
+                <InputListItem label="Data da Abertura:" type="Navigation">
+                  <Text text="{data>/abertura}" tooltip="Data da Abertura" class="textColor"/>
+                </InputListItem>
+                <InputListItem label="Status:" type="Navigation">
+                  <Text text="{data>/status}" tooltip="Status" class="textColor"/>
+                </InputListItem>
+                <InputListItem label="CNPJ:" type="Navigation">
+                  <Text text="{data>/cnpj}" tooltip="CNPJ" class="textColor"/>
+                </InputListItem>
+                <InputListItem label="Razão Social:" type="Navigation">
+                  <Text text="{data>/nome}" class="textColor"/>
+                </InputListItem>
+                <InputListItem label="Natureza Jurídica:" type="Navigation">
+                  <Text text="{data>/natureza_juridica}" tooltip="Razão Social" class="textColor"/>
+                </InputListItem>              
+                <InputListItem label="Nome Fantasia:" type="Navigation">
+                  <Text text="{data>/fantasia}" tooltip="Nome Fantasia" class="textColor"/>
+                </InputListItem>              
+                <InputListItem label="Capital Social:" type="Navigation" >
+                  <Text text="{data>/capital_social}" tooltip="Capital Social" class="textColor"/>
+                </InputListItem>
+                <InputListItem label="Data Situação:" type="Navigation">
+                  <Text text="{data>/data_situacao}" tooltip="Data Situação" class="textColor"/>
+                </InputListItem>
+                <InputListItem label="Situação:" type="Navigation">
+                  <Text text="{data>/situacao}" tooltip="Situação" class="textColor"/>
+                </InputListItem>
+                <InputListItem label="Situação Especial:" type="Navigation">
+                  <Text text="{data>/situacao_especial}" tooltip="Situação Especial" class="textColor"/>
+                </InputListItem>
+                <InputListItem label="Motivo Situação:" type="Navigation">
+                  <Text text="{data>/motivo_situacao}" tooltip="Motivo Situação" class="textColor"/>
+                </InputListItem>                                        
+                <InputListItem label="EFR:" type="Navigation">
+                  <Text text="{data>/efr}" class="textColor"/>
+                </InputListItem>
+                <InputListItem label="Porte:" type="Navigation">
+                  <Text text="{data>/porte}" tooltip="EFR" class="textColor"/>
+                </InputListItem>
+                <InputListItem label="Tipo:" type="Navigation">
+                  <Text text="{data>/tipo}" tooltip="Tipo" class="textColor"/>
+                </InputListItem>
+                <InputListItem label="Última Atualização:" type="Navigation">
+                  <Text text="{data>/ultima_atualizacao}" tooltip="Última Atualização" class="textColor"/>
+                </InputListItem>                            
+              </List>
+            </IconTabFilter>
           
-          <IconTabFilter text="Dados Principais" key="dados" iconColor="Critical">
-            <List headerText="Dados Principais do CNPJ" >
-              <InputListItem label="Abertura:" type="Navigation">
-                <Text text="{data>/abertura}"/>
-              </InputListItem>
-              <InputListItem label="Status:" type="Navigation">
-                <Text text="{data>/status}"/>
-              </InputListItem>
-              <InputListItem label="CNPJ:" type="Navigation">
-                <Text text="{data>/cnpj}"/>
-              </InputListItem>
-              <InputListItem label="Nome:" type="Navigation">
-                <Text text="{data>/nome}"/>
-              </InputListItem>
-              <InputListItem label="Natureza Jurídica:" type="Navigation">
-                <Text text="{data>/natureza_juridica}"/>
-              </InputListItem>              
-              <InputListItem label="Fantasia:" type="Navigation">
-                <Text text="{data>/fantasia}"/>
-              </InputListItem>              
-              <InputListItem label="Capital Social:" type="Navigation">
-                <Text text="{data>/capital_social}"/>
-              </InputListItem>
-              <InputListItem label="Data Situação:" type="Navigation">
-                <Text text="{data>/data_situacao}"/>
-              </InputListItem>
-              <InputListItem label="Situação:" type="Navigation">
-                <Text text="{data>/situacao}"/>
-              </InputListItem>
-              <InputListItem label="Situação Especial:" type="Navigation">
-                <Text text="{data>/situacao_especial}"/>
-              </InputListItem>
-              <InputListItem label="Motivo Situação:" type="Navigation">
-                <Text text="{data>/motivo_situacao}"/>
-              </InputListItem>                                        
-              <InputListItem label="EFR:" type="Navigation">
-                <Text text="{data>/efr}"/>
-              </InputListItem>
-              <InputListItem label="Porte:" type="Navigation">
-                <Text text="{data>/porte}"/>
-              </InputListItem>
-              <InputListItem label="Tipo:" type="Navigation">
-                <Text text="{data>/tipo}"/>
-              </InputListItem>
-              <InputListItem label="Última Atualização:" type="Navigation">
-                <Text text="{data>/ultima_atualizacao}"/>
-              </InputListItem>                            
-            </List>
-          </IconTabFilter>
-         
-          <IconTabFilter text="Endereço" key="endereco" iconColor="Critical">
-            <List headerText="Endereço do CNPJ" >
-              <InputListItem label="Logradouro:" type="Navigation">
-                <Text text="{data>/logradouro}" />
-              </InputListItem>
-              <InputListItem label="número:" type="Navigation">
-                <Text text="{data>/numero}" />
-              </InputListItem>
-              <InputListItem label="Bairro" type="Navigation">
-                <Text text="{data>/bairro}" />
-              </InputListItem>              
-              <InputListItem label="Complemento:" type="Navigation">
-                <Text text="{data>/complemento}" />
-              </InputListItem>
-              <InputListItem label="Município:" type="Navigation">
-                <Text text="{data>/municipio}" />
-              </InputListItem>              
-              <InputListItem label="Cep:" type="Navigation">
-                <Text text="{data>/cep}" />
-              </InputListItem>
-              <InputListItem label="UF:" type="Navigation">
-                <Text text="{data>/uf}" />
-              </InputListItem>              
-            </List>
-          </IconTabFilter>
+            <IconTabFilter text="Endereço" key="endereco" iconColor="Critical">
+              <List headerText="Endereço da empresa {data>/fantasia}" >
+                <InputListItem label="Logradouro:" type="Navigation">
+                  <Text text="{data>/logradouro}" tooltip="Logradouro" class="textColor"/>
+                </InputListItem>
+                <InputListItem label="número:" type="Navigation">
+                  <Text text="{data>/numero}" tooltip="número" class="textColor"/>
+                </InputListItem>
+                <InputListItem label="Bairro:" type="Navigation">
+                  <Text text="{data>/bairro}" tooltip="Bairro" class="textColor"/>
+                </InputListItem>              
+                <InputListItem label="Complemento:" type="Navigation">
+                  <Text text="{data>/complemento}" tooltip="Complemento" class="textColor"/>
+                </InputListItem>
+                <InputListItem label="Município:" type="Navigation">
+                  <Text text="{data>/municipio}" tooltip="Município" class="textColor"/>
+                </InputListItem>              
+                <InputListItem label="Cep:" type="Navigation">
+                  <Text text="{data>/cep}" tooltip="Cep" class="textColor"/>
+                </InputListItem>
+                <InputListItem label="UF:" type="Navigation">
+                  <Text text="{data>/uf}" tooltip="UF" class="textColor"/>
+                </InputListItem>              
+              </List>
+            </IconTabFilter>
 
-          <IconTabFilter text="Telefone" key="telefone" iconColor="Critical">
-            <List headerText="Telefone do CNPJ">
-              <InputListItem label="Telefone:" type="Navigation">
-                <Text text="{data>/telefone}" />
-              </InputListItem>
-            </List>
-          </IconTabFilter>
+            <IconTabFilter text="Telefone" key="telefone" iconColor="Critical">
+              <List headerText="Telefone da empresa {data>/fantasia}">
+                <InputListItem label="Telefone:" type="Navigation">
+                  <Text text="{data>/telefone}" tooltip="Telefone" class="textColor"/>
+                </InputListItem>
+              </List>
+            </IconTabFilter>
 
-          <IconTabFilter text="Email" key="email" iconColor="Critical">
-            <List headerText="Email do CNPJ">
-              <InputListItem label="Email:" type="Navigation">
-                <Text text="{data>/email}" />
-              </InputListItem>
-            </List>
-          </IconTabFilter>        
-                    
-          <IconTabFilter text="Atividade Principal" key="principal" iconColor="Critical">
-            <List headerText="Atividade Principal do CNPJ">
-              <InputListItem label="Código CNAE:" type="Navigation">
-                <Text text="{data>/atividade_principal/0/code}" />
-              </InputListItem>
-              <InputListItem label="Descrição CNAE:" type="Navigation">
-                <Text text="{data>/atividade_principal/0/text}" />
-              </InputListItem>
-            </List>
-          </IconTabFilter>
-          
-          <IconTabFilter text="Atividade Secundária" key="secundario" iconColor="Critical">
-            <List headerText="Atividade Secundária do CNPJ">
-              <InputListItem label="Código CNAE:" type="Navigation">
-                <Text text="{data>/atividades_secundarias/0/code}" />
-              </InputListItem>
-              <InputListItem label="Descrição CNAE:" type="Navigation">
-                <Text text="{data>/atividades_secundarias/0/text}" />
-              </InputListItem>
-            </List>
-          </IconTabFilter>
+            <IconTabFilter text="Email" key="email" iconColor="Critical">
+              <List headerText="Email da empresa {data>/fantasia}">
+                <InputListItem label="Email:" type="Navigation">
+                  <Text text="{data>/email}" tooltip="Email" class="textColor"/>
+                </InputListItem>
+              </List>
+            </IconTabFilter>        
+                      
+            <IconTabFilter text="Atividade Principal" key="principal" iconColor="Critical">
+              <List headerText="CNAE - Atividade Principal da empresa {data>/fantasia}">
+                <InputListItem  label="Código:" type="Navigation">
+                  <Text text="{data>/atividade_principal/0/code}" tooltip="Código" class="textColor"/>
+                </InputListItem>
+                <InputListItem label="Descrição:" type="Navigation">
+                  <Text text="{data>/atividade_principal/0/text}" tooltip="Descrição" class="textColor"/>
+                </InputListItem>
+              </List>
+            </IconTabFilter>
+            
+            <IconTabFilter text="Atividade Secundária" key="secundario" iconColor="Critical">
+              <List headerText="CNAE - Atividade Secundária da empresa {data>/fantasia}">
+                <InputListItem label="Código:" type="Navigation">
+                  <Text text="{data>/atividades_secundarias/0/code}" tooltip="Código" class="textColor"/>
+                </InputListItem>
+                <InputListItem label="Descrição:" type="Navigation">
+                  <Text text="{data>/atividades_secundarias/0/text}" tooltip="Descrição" class="textColor"/>
+                </InputListItem>
+              </List>
+            </IconTabFilter>
 
-          <IconTabFilter text="Sócios" key="socios" iconColor="Critical">
-            <List headerText="Sócios do CNPJ">
-              <InputListItem label="Qual.:" type="Navigation">
-                <Text text="{data>/qsa/0/qual}" />
-              </InputListItem>
-              <InputListItem label="Nome:" type="Navigation">
-                <Text text="{data>/qsa/0/nome}" />
-              </InputListItem>
-              <InputListItem label="Qual.:" type="Navigation">
-                <Text text="{data>/qsa/1/qual}" />
-              </InputListItem>
-              <InputListItem label="Nome:" type="Navigation">
-                <Text text="{data>/qsa/1/nome}" />
-              </InputListItem>
-            </List>
-          </IconTabFilter>
+            <IconTabFilter text="Sócios" key="socios" iconColor="Critical">
+              <List headerText="Sócios da empresa {data>/fantasia}">
+                <InputListItem label="Qualificação:" type="Navigation">
+                  <Text text="{data>/qsa/0/qual}" tooltip="Qualificação" class="textColor"/>
+                </InputListItem>
+                <InputListItem label="Nome:" type="Navigation">
+                  <Text text="{data>/qsa/0/nome}" tooltip="Nome" class="textColor"/>
+                </InputListItem>
+                <InputListItem label="Qualificação:" type="Navigation">
+                  <Text text="{data>/qsa/1/qual}" tooltip="Qualificação" class="textColor"/>
+                </InputListItem>
+                <InputListItem label="Nome:" type="Navigation">
+                  <Text text="{data>/qsa/1/nome}" tooltip="Nome" class="textColor"/>
+                </InputListItem>
+                <InputListItem label="Qualificação:" type="Navigation">
+                  <Text text="{data>/qsa/2/qual}" tooltip="Qualificação" class="textColor"/>
+                </InputListItem>
+                <InputListItem label="Nome:" type="Navigation">
+                  <Text text="{data>/qsa/2/nome}" tooltip="Nome" class="textColor"/>
+                </InputListItem>
+              </List>
+            </IconTabFilter>
 
-        </items>
-      </IconTabBar>        
+          </items>
+        </IconTabBar>        
         
         <footer>
            <core:Fragment fragmentName="buscacnpj.ui5.view.Footer" type="XML" />          

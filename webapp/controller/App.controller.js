@@ -21,6 +21,7 @@ sap.ui.define([
 				url: url,
 				"dataType": "jsonp",
 				success: function (response) {
+					console.log(response);
 					var oModel = new JSONModel(response);
 					that.getView().setModel(oModel, "data");									
 					MessageToast.show("Consulta efetuada com sucesso.");

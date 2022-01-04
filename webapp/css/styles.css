@@ -10,6 +10,17 @@
   width: 500px !important;
 }
 
+.imgPanel {
+  background-image: url(../assets/top.png);
+  background-repeat: no-repeat;
+  height: 200px;
+}
+
+.imageTop {
+	/* content:url("../assets/top.png"); */
+  background: url(../assets/top.png);
+}
+
 #busyIndicator {
   width: 100px;
   height: 100px;
@@ -23,6 +34,18 @@
 #spinner {
   width: 100px;
   height: 100px;
+}
+
+.textColor {
+  color: #FF5400 !important;
+}
+
+.toolbarColor {  
+  background-color:#FFA900 !important;
+}
+
+.labelFooter {
+  color: white !important;
 }
 
 
@@ -66,4 +89,20 @@
   background-color: #5D5C5C !important;
   border: 1px solid #4E4D4D !important;
   border-left: 7px solid #4E4D4D !important;
+}
+
+/* media queries */
+/*----------------------------------------------------------*/
+@media only screen and (max-width: 600px) {
+   
+  .text {
+    font-size: 20px;
+  }
+
+  .input {
+    width: 230px !important;
+  }
+
+
+
 }
