@@ -2,8 +2,7 @@
 	controllerName="buscacnpj.ui5.controller.App"
 	xmlns:mvc="sap.ui.core.mvc"
   xmlns:core="sap.ui.core"
-	xmlns="sap.m"
-	xmlns:f="sap.ui.layout.form"
+	xmlns="sap.m"	
   xmlns:html="http://www.w3.org/1999/xhtml"
   displayBlock="true"
 	height="100%"
@@ -40,11 +39,11 @@
 
         <IconTabBar
         id="idIconTabBarNoIcons"
-        expanded="{device>/isNoPhone}"
-        class="sapUiResponsiveContentPadding sapUiLargeMarginTop sapUiLargeMarginBottom">
+        class="sapUiResponsiveContentPadding sapUiLargeMarginTop sapUiLargeMarginBottom"     
+        >
         <items>
           
-          <IconTabFilter text="Dados Principais" key="dados">           
+          <IconTabFilter text="Dados Principais" key="dados" iconColor="Critical">
             <List headerText="Dados Principais do CNPJ" >
               <InputListItem label="Abertura:" type="Navigation">
                 <Text text="{data>/abertura}"/>
@@ -70,17 +69,20 @@
               <InputListItem label="Data Situação:" type="Navigation">
                 <Text text="{data>/data_situacao}"/>
               </InputListItem>
+              <InputListItem label="Situação:" type="Navigation">
+                <Text text="{data>/situacao}"/>
+              </InputListItem>
+              <InputListItem label="Situação Especial:" type="Navigation">
+                <Text text="{data>/situacao_especial}"/>
+              </InputListItem>
+              <InputListItem label="Motivo Situação:" type="Navigation">
+                <Text text="{data>/motivo_situacao}"/>
+              </InputListItem>                                        
               <InputListItem label="EFR:" type="Navigation">
                 <Text text="{data>/efr}"/>
               </InputListItem>
-              <InputListItem label="Data Situação:" type="Navigation">
-                <Text text="{data>/data_situacao}"/>
-              </InputListItem>                          
               <InputListItem label="Porte:" type="Navigation">
                 <Text text="{data>/porte}"/>
-              </InputListItem>
-              <InputListItem label="Situação:" type="Navigation">
-                <Text text="{data>/situacao_especial}"/>
               </InputListItem>
               <InputListItem label="Tipo:" type="Navigation">
                 <Text text="{data>/tipo}"/>
@@ -91,7 +93,7 @@
             </List>
           </IconTabFilter>
          
-          <IconTabFilter text="Endereço" key="endereco">
+          <IconTabFilter text="Endereço" key="endereco" iconColor="Critical">
             <List headerText="Endereço do CNPJ" >
               <InputListItem label="Logradouro:" type="Navigation">
                 <Text text="{data>/logradouro}" />
@@ -117,7 +119,7 @@
             </List>
           </IconTabFilter>
 
-          <IconTabFilter text="Telefone" key="telefone">
+          <IconTabFilter text="Telefone" key="telefone" iconColor="Critical">
             <List headerText="Telefone do CNPJ">
               <InputListItem label="Telefone:" type="Navigation">
                 <Text text="{data>/telefone}" />
@@ -125,50 +127,49 @@
             </List>
           </IconTabFilter>
 
-          <IconTabFilter text="Email" key="email">
+          <IconTabFilter text="Email" key="email" iconColor="Critical">
             <List headerText="Email do CNPJ">
               <InputListItem label="Email:" type="Navigation">
                 <Text text="{data>/email}" />
               </InputListItem>
             </List>
-          </IconTabFilter>          
+          </IconTabFilter>        
                     
-          <IconTabFilter text="Atividade Principal" key="principal">
+          <IconTabFilter text="Atividade Principal" key="principal" iconColor="Critical">
             <List headerText="Atividade Principal do CNPJ">
               <InputListItem label="Código CNAE:" type="Navigation">
-                <Text text="{data>/atividade_principal[0].code}" />
+                <Text text="{data>/atividade_principal/0/code}" />
               </InputListItem>
               <InputListItem label="Descrição CNAE:" type="Navigation">
-                <Text text="{data>/atividade_principal[0].text}" />
+                <Text text="{data>/atividade_principal/0/text}" />
               </InputListItem>
-
             </List>
           </IconTabFilter>
           
-          <IconTabFilter text="Atividade Secundária" key="secundario">
+          <IconTabFilter text="Atividade Secundária" key="secundario" iconColor="Critical">
             <List headerText="Atividade Secundária do CNPJ">
               <InputListItem label="Código CNAE:" type="Navigation">
-                <Text text="{data>/atividades_secundarias[0].code}" />
+                <Text text="{data>/atividades_secundarias/0/code}" />
               </InputListItem>
               <InputListItem label="Descrição CNAE:" type="Navigation">
-                <Text text="{data>/atividades_secundarias[0].text}" />
+                <Text text="{data>/atividades_secundarias/0/text}" />
               </InputListItem>
             </List>
           </IconTabFilter>
 
-          <IconTabFilter text="Sócios" key="socios">
+          <IconTabFilter text="Sócios" key="socios" iconColor="Critical">
             <List headerText="Sócios do CNPJ">
               <InputListItem label="Qual.:" type="Navigation">
-                <Text text="{data>/qsa[0].qual}" />
+                <Text text="{data>/qsa/0/qual}" />
               </InputListItem>
               <InputListItem label="Nome:" type="Navigation">
-                <Text text="{data>/qsa[0].nome}" />
+                <Text text="{data>/qsa/0/nome}" />
               </InputListItem>
               <InputListItem label="Qual.:" type="Navigation">
-                <Text text="{data>/qsa[1].qual}" />
+                <Text text="{data>/qsa/1/qual}" />
               </InputListItem>
               <InputListItem label="Nome:" type="Navigation">
-                <Text text="{data>/qsa[1].nome}" />
+                <Text text="{data>/qsa/1/nome}" />
               </InputListItem>
             </List>
           </IconTabFilter>

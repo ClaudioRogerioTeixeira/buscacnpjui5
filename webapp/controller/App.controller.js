@@ -2,9 +2,7 @@ sap.ui.define([
 	"sap/ui/core/mvc/Controller",
 	"sap/ui/model/json/JSONModel",
 	"sap/m/MessageToast"
-], function(Controller,
-	JSONModel,
-	MessageToast) {
+], function(Controller, JSONModel, MessageToast) {
 	"use strict";
 
 	return Controller.extend("buscacnpj.ui5.controller.App", {
@@ -23,9 +21,6 @@ sap.ui.define([
 				url: url,
 				"dataType": "jsonp",
 				success: function (response) {
-					console.log(response);
-					console.log(response.nome);
-					console.log(response.atividade_principal[0].code);
 					var oModel = new JSONModel(response);
 					that.getView().setModel(oModel, "data");									
 					MessageToast.show("Consulta efetuada com sucesso.");
