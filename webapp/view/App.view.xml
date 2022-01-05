@@ -4,6 +4,7 @@
   xmlns:core="sap.ui.core"
 	xmlns="sap.m"	
   xmlns:html="http://www.w3.org/1999/xhtml"
+  xmlns:customData="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1"
   displayBlock="true"
 	height="100%"
 	busyIndicatorDelay="0"
@@ -40,10 +41,10 @@
             direction="Row"       
 				    justifyContent="Center"
           >
-            <Input class="input" id="inputCnpj" placeholder="Digite o CNPJ da empresa" showValueHelp="true" valueHelpRequest=".onValueHelpRequest"  
-              tooltip="Digite o CNPJ da empresa" liveChange=".onLiveChange"
+            <Input class="input" id="inputCnpj" placeholder="Digite o CNPJ da empresa" showValueHelp="true" valueHelpRequest=".onValueHelpRequest" 
+            tooltip="Digite o CNPJ da empresa" customData:liveChangeMsgOnInvalidInput="CNPJ Inválido" liveChange=".onLiveChange"
             />
-            <Button id="botao" icon="sap-icon://search" press=".consultaCnpj" tooltip="Consultar o CNPJ"/>
+            <Button id="button" icon="sap-icon://search" press=".consultaCnpj" tooltip="Consultar o CNPJ" />
           </FlexBox>         
           
         </html:div>   
