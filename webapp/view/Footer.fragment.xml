@@ -3,11 +3,19 @@
 	xmlns:c="sap.ui.core"
 >
 
-<Toolbar class="toolbarColor">
+<!-- 
+<Toolbar class="toolbarColor sapUiTinyMargin">
   <content>
       <ToolbarSpacer/>
       <Label text="Desenvolvido: Claudio Teixeira" tooltip="Claudio Teixeira" class="labelFooter"/>
   </content>
-</Toolbar>
+</Toolbar> 
+-->
+
+<OverflowToolbar class="sapUiMediumMarginTop toolbarColor">
+  <ToolbarSpacer/>
+  <Text text="Desenvolvido: Claudio Teixeira" class="centerFooter"/>
+  <ToolbarSpacer/>
+</OverflowToolbar>
 
 </c:FragmentDefinition>

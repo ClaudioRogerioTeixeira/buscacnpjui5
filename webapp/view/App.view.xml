@@ -40,7 +40,9 @@
             direction="Row"       
 				    justifyContent="Center"
           >
-            <Input class="input" id="inputCnpj" placeholder="Digite o CNPJ da empresa" showValueHelp="true" valueHelpRequest=".onValueHelpRequest"  tooltip="Digite o CNPJ da empresa" />
+            <Input class="input" id="inputCnpj" placeholder="Digite o CNPJ da empresa" showValueHelp="true" valueHelpRequest=".onValueHelpRequest"  
+              tooltip="Digite o CNPJ da empresa" liveChange=".onLiveChange"
+            />
             <Button id="botao" icon="sap-icon://search" press=".consultaCnpj" tooltip="Consultar o CNPJ"/>
           </FlexBox>         
           
@@ -53,7 +55,7 @@
           <items>
             
             <IconTabFilter text="Dados Principais" key="dados" iconColor="Critical">
-              <List headerText="Dados Principais da empresa {data>/fantasia}">
+              <List headerText="{data>/fantasia} - Dados Principais da empresa">
                 <InputListItem label="Data da Abertura:" type="Navigation">
                   <Text text="{data>/abertura}" tooltip="Data da Abertura" class="textColor"/>
                 </InputListItem>
@@ -103,7 +105,7 @@
             </IconTabFilter>
           
             <IconTabFilter text="Endereço" key="endereco" iconColor="Critical">
-              <List headerText="Endereço da empresa {data>/fantasia}" >
+              <List headerText="{data>/fantasia} - Endereço da empresa" >
                 <InputListItem label="Logradouro:" type="Navigation">
                   <Text text="{data>/logradouro}" tooltip="Logradouro" class="textColor"/>
                 </InputListItem>
@@ -129,7 +131,7 @@
             </IconTabFilter>
 
             <IconTabFilter text="Telefone" key="telefone" iconColor="Critical">
-              <List headerText="Telefone da empresa {data>/fantasia}">
+              <List headerText="{data>/fantasia} - Telefone da empresa">
                 <InputListItem label="Telefone:" type="Navigation">
                   <Text text="{data>/telefone}" tooltip="Telefone" class="textColor"/>
                 </InputListItem>
@@ -137,7 +139,7 @@
             </IconTabFilter>
 
             <IconTabFilter text="Email" key="email" iconColor="Critical">
-              <List headerText="Email da empresa {data>/fantasia}">
+              <List headerText="{data>/fantasia} - Email da empresa">
                 <InputListItem label="Email:" type="Navigation">
                   <Text text="{data>/email}" tooltip="Email" class="textColor"/>
                 </InputListItem>
@@ -145,7 +147,7 @@
             </IconTabFilter>        
                       
             <IconTabFilter text="Atividade Principal" key="principal" iconColor="Critical">
-              <List headerText="CNAE - Atividade Principal da empresa {data>/fantasia}">
+              <List headerText=" {data>/fantasia} - Atividade Principal da empresa (CNAE)">
                 <InputListItem  label="Código:" type="Navigation">
                   <Text text="{data>/atividade_principal/0/code}" tooltip="Código" class="textColor"/>
                 </InputListItem>
@@ -156,7 +158,7 @@
             </IconTabFilter>
             
             <IconTabFilter text="Atividade Secundária" key="secundario" iconColor="Critical">
-              <List headerText="CNAE - Atividade Secundária da empresa {data>/fantasia}">
+              <List headerText=" {data>/fantasia} - Atividade Secundária da empresa (CNAE)">
                 <InputListItem label="Código:" type="Navigation">
                   <Text text="{data>/atividades_secundarias/0/code}" tooltip="Código" class="textColor"/>
                 </InputListItem>
@@ -167,7 +169,7 @@
             </IconTabFilter>
 
             <IconTabFilter text="Sócios" key="socios" iconColor="Critical">
-              <List headerText="Sócios da empresa {data>/fantasia}">
+              <List headerText="{data>/fantasia} - Sócios da empresa">
                 <InputListItem label="Qualificação:" type="Navigation">
                   <Text text="{data>/qsa/0/qual}" tooltip="Qualificação" class="textColor"/>
                 </InputListItem>

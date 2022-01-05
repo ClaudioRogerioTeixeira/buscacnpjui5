@@ -38,7 +38,14 @@ sap.ui.define([
 		onValueHelpRequest: function(oEvent) {
 			this.getView().byId("idIconTabBarNoIcons").setVisible(false);
 			this.getView().byId("inputCnpj").setValue("");		
-		}
+		},	
+
+		onLiveChange: function(oEvent) {
+			var inputValue = oEvent.getParameter('value').trim();
+			inputValue = inputValue.replace(/[^\d]/g, '');
+			inputValue = inputValue.substring(0, 14);
+			oEvent.getSource().setValue(inputValue);
+		},
 
 	});
 });
