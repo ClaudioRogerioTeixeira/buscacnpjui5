@@ -14,7 +14,7 @@
 
 <OverflowToolbar class="sapUiMediumMarginTop toolbarColor">
   <ToolbarSpacer/>
-  <Text text="Desenvolvido: Claudio Teixeira" class="centerFooter"/>
+  <Text text="Copyright © 2022 Claudio Teixeira. All Rights Reserved." class="centerFooter"/>
   <ToolbarSpacer/>
 </OverflowToolbar>
 
