@@ -22,6 +22,7 @@
         -->
 
         <!-- <Image class="imageTop" /> -->
+        
         <html:picture>
           <html:source media="(max-width: 480px)" srcset="./assets/top600.png" />
           <html:source media="(max-width: 768px)" srcset="./assets/top600.png" />
