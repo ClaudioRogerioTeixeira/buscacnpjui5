@@ -1,4 +1,5 @@
 <mvc:View
+  id="Appid"
 	controllerName="buscacnpj.ui5.controller.App"
 	xmlns:mvc="sap.ui.core.mvc"
   xmlns:core="sap.ui.core"
@@ -7,7 +8,7 @@
   xmlns:customData="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1"
   displayBlock="true"
 	height="100%"
-	busyIndicatorDelay="0"
+	busyIndicatorDelay="0"  
 >
 
 <App id="app">
@@ -45,10 +46,15 @@
             <Input class="input" id="inputCnpj" placeholder="Digite o CNPJ da empresa" showValueHelp="true" valueHelpRequest=".onValueHelpRequest" 
             tooltip="Digite o CNPJ da empresa" customData:liveChangeMsgOnInvalidInput="CNPJ Inválido" liveChange=".onLiveChange"
             />
-            <Button id="button" icon="sap-icon://search" press=".consultaCnpj" tooltip="Consultar o CNPJ" />
-          </FlexBox>         
+            <!-- <Button id="button" icon="sap-icon://search" press=".consultaCnpj" tooltip="Consultar o CNPJ" /> -->
+            <Button id="button" icon="sap-icon://search" text="Selecionar" press=".consultaCnpj" tooltip="Consultar o CNPJ" />
+            <!-- <Button id="button" icon="sap-icon://search" text="Selecionar" press="toggleBusyIndicator" tooltip="Consultar o CNPJ" /> -->
+
+          </FlexBox>                      
           
         </html:div>   
+
+        <!-- <Input class="input" id="cnpjId" placeholder="Digite aempresa" showValueHelp="true" tooltip="Digite o CNPJ da empresa" /> -->
 
         <IconTabBar
         id="idIconTabBarNoIcons"
