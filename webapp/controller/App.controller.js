@@ -29,7 +29,7 @@ sap.ui.define([
 			// ternario para teste unitário 
 			// cnpj = (cnpj == "") ? '12564060000116'  : "cnpj";
 						
-			var url = 'https://www.receitaws.com.br/v1/cnpj/' + cnpj.replace(/[^0-9]/g, '');
+			var url = '' + cnpj.replace(/[^0-9]/g, '');
 			var that = this;
 			jQuery.ajax({
 				method: "GET",
