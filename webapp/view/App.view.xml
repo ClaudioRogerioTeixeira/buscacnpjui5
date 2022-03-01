@@ -47,7 +47,7 @@
             tooltip="Digite o CNPJ da empresa" customData:liveChangeMsgOnInvalidInput="CNPJ Inválido" liveChange=".onLiveChange"
             />
             <!-- <Button id="button" icon="sap-icon://search" press=".consultaCnpj" tooltip="Consultar o CNPJ" /> -->
-            <Button id="button" icon="sap-icon://search" text="Selecionar" press=".consultaCnpj" tooltip="Consultar o CNPJ" />
+            <Button id="buttonCnpj" icon="sap-icon://search" text="" press=".consultaCnpj" tooltip="Consultar o CNPJ" />
             <!-- <Button id="button" icon="sap-icon://search" text="Selecionar" press="toggleBusyIndicator" tooltip="Consultar o CNPJ" /> -->
 
           </FlexBox>                      

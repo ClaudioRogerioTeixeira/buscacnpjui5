@@ -15,27 +15,9 @@ sap.ui.require([
 		autoWait : true    
   });
 
-  // var incluirCNPJInput = {
-	// 	controlType: "sap.m.Input",
-	// 	matchers: new PropertyStrictEquals({
-	// 		name: "tooltip",
-	// 		value: "Digite o CNPJ da empresa"
-	// 	}),
-	// 	actions:  new EnterText({text: "12564060000116"}),
-	// 	errorMessage: "Input não encontrado",
-  //   success : function () {     
-  //     Opa5.assert.ok(true, "alterou o input");
-  //     // Opa5.assert.strictEqual( $("#inputCnpj").val(cnpj), cnpj, "Input Preenchido igualmente: " + cnpj);           
-	// 	}
-	//};
-
-  // código OK não alterar
   var selecionarCNPJ = {
 		controlType: "sap.m.Button",
-		matchers: new PropertyStrictEquals({
-			name: "text",
-			value: "Selecionar"
-		}),
+    id: new RegExp("buttonCnpj"),
 		actions: new Press(),   
 		errorMessage: "O botão não foi encontrado",
     success : function () {   
@@ -44,7 +26,7 @@ sap.ui.require([
 		}
 	};
 
-  QUnit.module("Async - Ajax Mock Test", {
+  QUnit.module("Test - OPA5", {
 		beforeEach: function (assert) {
       assert.ok(true, "Inicio do Teste - OPA5");
 		},
@@ -57,27 +39,21 @@ sap.ui.require([
      
     Given.iStartMyAppInAFrame("../index.html");
 
-    // When.waitFor(incluirCNPJInput);
-
-    When.waitFor({
+		When.waitFor({
       id: new RegExp("inputCnpj"),
-      // If you want you can provide multiple actions
-      // actions: new EnterText({ text: "Hello " }),
       actions: new EnterText({
 				keepFocus: true,
-        text: "Jo"
+        text: "12564060000116"
 			}),
       success : function (aInputs) {
-				Opa5.assert.ok(true, "Input encontrado pelo id: " + aInputs[0]);
+				Opa5.assert.ok(true, "Input encontrado pelo id e incluido cep no input: " + aInputs[0]);
 			},
     });
 
-
-    // when ok não apagar
     When.waitFor(selecionarCNPJ);
 
     Then.waitFor({
-			id: new RegExp("button"),
+			id: new RegExp("buttonCnpj"),
 			success : function (aButtons) {
 				Opa5.assert.ok(true, "Botão Selecionar Encontrado: " + aButtons[0]);
 			},
@@ -91,17 +67,6 @@ sap.ui.require([
 			},
 			errorMessage : "Não encontrou o botão com o id correspondente"
 		});
-
-    // When.waitFor({
-    //   // id: "inputCnpj",
-    //   id: new RegExp("inputCnpj"),
-    //   actions: new EnterText({
-    //       text: "Incluindo Texto",
-    //       keepFocus: true
-    //   }),
-    //   errorMessage: "Input inputCnpj não encontrado",
-    // })
-
 
     // Given = arrangements (Dado = arranjos)
     // When = actions (Quando = ações)
