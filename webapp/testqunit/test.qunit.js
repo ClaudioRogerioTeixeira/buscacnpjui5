@@ -10,7 +10,7 @@ sap.ui.define([], function() {
 		}
 	});
   
-  QUnit.test("Async - Ajax Mock Test", function(assert) {
+  QUnit.test("Async - Ajax Test", function(assert) {
     var done = assert.async(1);
     
     var cnpj = "12.564.060/0001-16";
@@ -80,8 +80,7 @@ sap.ui.define([], function() {
       type: "GET",
       dataType: "jsonp",
       success: function (data) {
-        console.log('data: ', data);
-        assert.ok(data, "Dados Carregados")
+        assert.ok(data ? true : false, "Dados Carregados")
         assert.deepEqual(data, dados, "Dados Iguais")
       },
       error: function (err) {
