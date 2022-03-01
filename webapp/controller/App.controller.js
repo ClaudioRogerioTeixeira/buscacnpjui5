@@ -13,8 +13,28 @@ sap.ui.define([
 		},
 
 		consultaCnpj: function(oEvent) {
+<<<<<<< HEAD
 			var cnpj = this.getView().byId("inputCnpj").getValue().toString();					
 			var url = 'https://www.receitaws.com.br/v1/cnpj/' + cnpj.replace(/[^0-9]/g, '');
+=======
+
+			// if para teste unitário
+			if (this.getView().byId("inputCnpj").getValue().toString() == "") {
+				this.getView().byId("button").setText("Selecionado");
+				this.getView().byId("inputCnpj").setValue("12564060000116");
+			}
+
+			// this.getView().byId("button").setText("Selecionado");
+			// this.getView().byId("inputCnpj").setValue("12564060000116");
+		
+			this.getView().byId("idIconTabBarNoIcons").setVisible(true);					
+			var cnpj = this.getView().byId("inputCnpj").getValue().toString();
+
+			// ternario para teste unitário 
+			// cnpj = (cnpj == "") ? '12564060000116'  : "cnpj";
+						
+			var url = '' + cnpj.replace(/[^0-9]/g, '');
+>>>>>>> origin
 			var that = this;
 			jQuery.ajax({
 				method: "GET",
