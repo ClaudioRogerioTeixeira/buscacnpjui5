@@ -1,7 +1,7 @@
 # Projeto BuscaCNPJ UI5
 APP de Busca CNPJ em todo o Brasil.
 
-Projeto desenvolvido utilizando o framework SAPUI5, AJAX para leitura api externa e testes QUnit e OPA5.
+Projeto desenvolvido utilizando o framework SAPUI5, AJAX e testes QUnit e OPA5.
 
 ### Tecnologias:
 * Html
