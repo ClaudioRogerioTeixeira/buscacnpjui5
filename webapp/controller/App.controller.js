@@ -14,7 +14,7 @@ sap.ui.define([
 
 		consultaCnpj: function(oEvent) {
 			var cnpj = this.getView().byId("inputCnpj").getValue().toString();					
-			var url = 'https://www.receitaws.com.br/v1/cnpj/' + cnpj.replace(/[^0-9]/g, '');
+			var url = '' + cnpj.replace(/[^0-9]/g, '');
 			var that = this;
 			jQuery.ajax({
 				method: "GET",
