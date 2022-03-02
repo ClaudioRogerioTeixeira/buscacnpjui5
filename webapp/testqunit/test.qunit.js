@@ -80,7 +80,7 @@ sap.ui.define([], function() {
       type: "GET",
       dataType: "jsonp",
       success: function (data) {
-        assert.ok(data ? true : false, "Dados Carregados")
+        // assert.ok(data ? true : false, "Dados Carregados")
         assert.deepEqual(data, dados, "Dados Iguais")
       },
       error: function (err) {
